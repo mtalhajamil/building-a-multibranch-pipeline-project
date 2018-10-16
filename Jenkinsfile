@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+		sh './jenkins/scripts/kill.sh'
 		sh 'npm config set registry http://registry.npmjs.org/ --global'
                 sh 'npm install --loglevel verbose'
             }
