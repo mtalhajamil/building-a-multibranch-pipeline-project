@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+		sh 'npm config set registry http://registry.npmjs.org/ --global'
+                sh 'npm install --loglevel verbose'
             }
         }
         stage('Test') {
